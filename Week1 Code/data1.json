@@ -1,0 +1,10 @@
+[
+    {
+        "group_name": "2d_task_1",
+        "vectors": [[1,1]],
+        "ori_axis": [[1,0],[0,1]],
+        "tasks": [
+            { "type": "change_axis", "obj_axis": [[1,0],[1,1]] }
+        ]
+    }
+]

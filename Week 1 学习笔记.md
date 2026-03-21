@@ -253,12 +253,46 @@ with open("data1.json", "w", encoding="utf-8") as f:
 
 ### 2.5 线性变换
 
+> [B站视频][]
+>
+> [B站视频]: https://www.bilibili.com/video/BV1ns41167b9/?share_source=copy_web&amp;vd_source=afe1c49a60a30e9206c3ae7ab0c5458a
+
 #### 2.5.1 基础定义
-1. 线性变换规则：满足**可加性**$T(\boldsymbol{\alpha}+\boldsymbol{\beta})=T(\boldsymbol{\alpha})+T(\boldsymbol{\beta})$、**数乘性**$T(k\boldsymbol{\alpha})=kT(\boldsymbol{\alpha})$
-2. 核心定理：**任意有限维线性变换，都可唯一对应一个矩阵**
+
+1. **线性变换是满足一下几点的空间变形**
+   - 直线变直线
+   - 原点不动
+   - 平行线仍平行
+   - 等比例伸缩不变形、不弯曲
+2. 线性变换规则：满足**可加性**$T(\boldsymbol{\alpha}+\boldsymbol{\beta})=T(\boldsymbol{\alpha})+T(\boldsymbol{\beta})$、**数乘性**$T(k\boldsymbol{\alpha})=kT(\boldsymbol{\alpha})$
+3. 核心定理：**任意有限维线性变换，都可唯一对应一个矩阵**
    - 变换表达：$T(\boldsymbol{x}) = A\boldsymbol{x}$（$A$为线性变换的表征矩阵）
 
+#### 2.5.3 为什么线性变换一定能用矩阵表示？
+
+1. 任何向量都能写成基的组合
+  $$
+  \boldsymbol x=x_1\boldsymbol e_1+x_2\boldsymbol e_2
+  $$
+
+2. 线性变换保持组合不变
+  $$
+  T(\boldsymbol x)=x_1T(\boldsymbol e_1)+x_2T(\boldsymbol e_2)
+  $$
+  
+
+3. 把变换后的基拼成列就是矩阵
+  $$
+  A=\big[T(\boldsymbol e_1),\;T(\boldsymbol e_2)\big]
+  $$
+
+所以
+$$
+T(x)=Ax
+$$
+
 #### 2.5.2 常见基础线性变换
+
 1. 恒等变换：矩阵$E=\begin{bmatrix}1&0\\0&1\end{bmatrix}$，向量保持不变
 2. 伸缩变换：矩阵$\begin{bmatrix}k_1&0\\0&k_2\end{bmatrix}$，$x$轴伸缩$k_1$倍，$y$轴伸缩$k_2$倍
 3. 旋转变换（逆时针旋转$\theta$）：$A=\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}$
@@ -358,7 +392,6 @@ with open("data1.json", "w", encoding="utf-8") as f:
   $$
   \lim_{(x,y)\to(x_0,y_0)} f(x,y) = A \quad \text{若} \quad \forall \varepsilon>0,\exists \delta>0, \text{当 } 0<|PP_0|<\delta \text{ 时 } |f(x,y)-A|<\varepsilon
   $$
-  
   
 - **关键点**：趋近方式有无穷多种（直线、曲线、螺旋等）。极限存在必须要求所有路径下的极限值相等。  
 
